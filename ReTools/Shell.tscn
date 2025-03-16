@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://dguoomt3hruw"]
+
+[ext_resource type="Script" uid="uid://cboky12uycqof" path="res://shell.gd" id="1_1fmqi"]
+[ext_resource type="PackedScene" uid="uid://bxsoq5jexegc1" path="res://Menu.tscn" id="2_sm65y"]
+[ext_resource type="PackedScene" uid="uid://dmx0ec86ib037" path="res://TapCounter.tscn" id="3_xhw64"]
+[ext_resource type="PackedScene" uid="uid://23qrkd77s8te" path="res://TillTracker.tscn" id="4_cxajg"]
+
+[node name="Shell" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1fmqi")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 144)
+layout_mode = 2
+alignment = 1
+
+[node name="ButtonMenu" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 36
+text = "Menu
+"
+
+[node name="ShellContainer" type="PanelContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TapCounter" parent="CanvasLayer/VBoxContainer/ShellContainer" instance=ExtResource("3_xhw64")]
+z_as_relative = false
+layout_mode = 2
+
+[node name="TillTracker" parent="CanvasLayer/VBoxContainer/ShellContainer" instance=ExtResource("4_cxajg")]
+z_as_relative = false
+layout_mode = 2
+
+[node name="Menu" parent="CanvasLayer/VBoxContainer/ShellContainer" instance=ExtResource("2_sm65y")]
+z_as_relative = false
+layout_mode = 2
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer/ButtonMenu" to="." method="_on_button_menu_pressed"]
+[connection signal="tapcounter_pressed" from="CanvasLayer/VBoxContainer/ShellContainer/Menu" to="." method="_on_menu_tapcounter_pressed"]
+[connection signal="tilltracker_pressed" from="CanvasLayer/VBoxContainer/ShellContainer/Menu" to="." method="_on_menu_tilltracker_pressed"]
