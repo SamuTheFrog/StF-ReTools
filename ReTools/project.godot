@@ -10,10 +10,14 @@ config_version=5
 
 [application]
 
-config/name="TapCounter"
+config/name="ReTools"
 config/version="2.0.0"
 run/main_scene="uid://dguoomt3hruw"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+
+[debug]
+
+gdscript/warnings/integer_division=0
 
 [display]
 

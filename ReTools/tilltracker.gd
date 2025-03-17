@@ -1,6 +1,7 @@
 extends Control
 class_name TillTracker
 
+signal save_pressed
 
 @onready var line_edit_penny_count: LineEdit = $VBoxContainer/VBoxContainer_Cents/HBox_Penny/LineEdit_PennyCount
 @onready var label_penny_total: Label = $VBoxContainer/VBoxContainer_Cents/HBox_Penny/Label_PennyTotal
@@ -158,6 +159,7 @@ func refresh_totals() -> void:
 	label_subtotal_cents.text = formatted_cents
 	label_subtotal_dollars.text = formatted_dollars
 	label_total.text = formatted_total
+
 
 
 func calculate_pennies() -> void:
@@ -318,7 +320,7 @@ func _on_button_quarter_increment_pressed() -> void:
 	refresh_totals()
 
 func _on_button_half_decrement_pressed() -> void:
-	count_half - 1
+	count_half = count_half - 1
 	refresh_lines()
 	calculate_halfdollars()
 	calculate_subtotal_cents()
@@ -508,7 +510,5 @@ func _on_button_hundred_increment_pressed() -> void:
 
 
 func _on_button_save_pressed() -> void:
-	
-	var till_count = get_viewport().get_texture().get_image()
-	
-	till_count.save_png("user://tillcount.png")
+
+	save_pressed.emit()

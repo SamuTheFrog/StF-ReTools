@@ -54,5 +54,6 @@ z_as_relative = false
 layout_mode = 2
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer/ButtonMenu" to="." method="_on_button_menu_pressed"]
+[connection signal="save_pressed" from="CanvasLayer/VBoxContainer/ShellContainer/TillTracker" to="." method="_on_till_tracker_save_pressed"]
 [connection signal="tapcounter_pressed" from="CanvasLayer/VBoxContainer/ShellContainer/Menu" to="." method="_on_menu_tapcounter_pressed"]
 [connection signal="tilltracker_pressed" from="CanvasLayer/VBoxContainer/ShellContainer/Menu" to="." method="_on_menu_tilltracker_pressed"]
