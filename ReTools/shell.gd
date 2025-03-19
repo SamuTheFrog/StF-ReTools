@@ -52,42 +52,42 @@ func _on_till_tracker_save_pressed() -> void:
 
 func save_data() -> void:
 	
-	var till_count = {
-	"100s x ":till_tracker.count_hundred,
-	"100s = ":till_tracker.hundreds,
-	"50s x ":till_tracker.count_fifty, 
-	"50s = ":till_tracker.fifties,
-	"20s x ":till_tracker.count_twenty,
-	"20s = ":till_tracker.twenties,
-	"10s x ":till_tracker.count_ten,
-	"10s = ":till_tracker.tens,
-	"5s x ":till_tracker.count_five,
-	"5s = ":till_tracker.fives,
-	"2s x ":till_tracker.count_two,
-	"2s = ":till_tracker.twos,
-	"1s x ":till_tracker.count_one,
-	"1s = ":till_tracker.ones,
-	"	Dollar Subtotal = ":till_tracker.formatted_dollars,
-	"1.00s x ":till_tracker.count_whole,
-	"1.00s = ":till_tracker.wholedollars,
-	".50s x ":till_tracker.count_half,
-	".50s = ":till_tracker.fifties,
-	".25s x ":till_tracker.count_quarter,
-	".25s = ":till_tracker.quarters,
-	".10s x ":till_tracker.count_dime,
-	".10s = ":till_tracker.dimes,
-	".05s x ":till_tracker.count_nickel,
-	".5s = ":till_tracker.nickels,
-	".01s x ":till_tracker.count_penny,
-	".1s = ":till_tracker.pennies,
-	"	Cent Subtotal = ":till_tracker.formatted_cents,
-	"	Total = ":till_tracker.formatted_total
-}
-	var save_path = "user://tillcount.dat"
+#	var till_count = {
+#	"100s x ":till_tracker.count_hundred,
+#	"100s = ":till_tracker.hundreds,
+#	"50s x ":till_tracker.count_fifty, 
+#	"50s = ":till_tracker.fifties,
+#	"20s x ":till_tracker.count_twenty,
+#	"20s = ":till_tracker.twenties,
+#	"10s x ":till_tracker.count_ten,
+#	"10s = ":till_tracker.tens,
+#	"5s x ":till_tracker.count_five,
+#	"5s = ":till_tracker.fives,
+#	"2s x ":till_tracker.count_two,
+#	"2s = ":till_tracker.twos,
+#	"1s x ":till_tracker.count_one,
+#	"1s = ":till_tracker.ones,
+#	"	Dollar Subtotal = ":till_tracker.formatted_dollars,
+#	"1.00s x ":till_tracker.count_whole,
+#	"1.00s = ":till_tracker.wholedollars,
+#	".50s x ":till_tracker.count_half,
+#	".50s = ":till_tracker.fifties,
+#	".25s x ":till_tracker.count_quarter,
+#	".25s = ":till_tracker.quarters,
+#	".10s x ":till_tracker.count_dime,
+#	".10s = ":till_tracker.dimes,
+#	".05s x ":till_tracker.count_nickel,
+#	".5s = ":till_tracker.nickels,
+#	".01s x ":till_tracker.count_penny,
+#	".1s = ":till_tracker.pennies,
+#	"	Cent Subtotal = ":till_tracker.formatted_cents,
+#	"	Total = ":till_tracker.formatted_total
+#}
+	var save_path = "user://tillcount.txt"
 
 	var save = FileAccess.open(save_path,FileAccess.WRITE)
 	
-	save.store_var(till_count)
+#	save.store_var(till_count)
 	
 	print("100s x (", till_tracker.count_hundred, ") = ", till_tracker.hundreds)
 	print("50s x (", till_tracker.count_fifty, ") = ", till_tracker.fifties)
@@ -102,3 +102,7 @@ func save_data() -> void:
 	print("0.10s x (", till_tracker.count_dime, ") = ", till_tracker.dimes)
 	print("0.05s x (", till_tracker.count_nickel, ") = ", till_tracker.nickels)
 	print("0.01s x (", till_tracker.count_penny, ") = ", till_tracker.pennies)
+
+	var arr_till_count = []
+	
+	

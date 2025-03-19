@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://23qrkd77s8te"]
 
-[ext_resource type="Script" uid="uid://ccj8j8nfd80tx" path="res://tilltracker.gd" id="1_k1gdj"]
+[ext_resource type="Script" uid="uid://dbacd2iwjq0wj" path="res://till_tracker.gd" id="1_k1gdj"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k1gdj"]
 
